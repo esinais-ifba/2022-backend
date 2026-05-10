@@ -7,6 +7,7 @@ const routes = require('./routes.js');
 require('./database');
 
 const app = express();
+const port = Number(process.env.PORT || 8080);
 
 app.use(express.json());
 
@@ -22,6 +23,6 @@ app.use((req, res, next) => {
 
 app.use(routes);
 
-app.listen(8080, () => {
-    console.log("Servidor iniciado na porta 8080: http://localhost:8080");
+app.listen(port, () => {
+    console.log(`Servidor iniciado na porta ${port}: http://localhost:${port}`);
 });

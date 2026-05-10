@@ -11,7 +11,7 @@ const ffprobe = require('ffprobe-static');
 
 
 const fs = require('fs'); // manipular arquivos
-const caminhoImg = './public/upload/';
+const caminhoImg = './src/public/upload/';
 
 
 
@@ -941,8 +941,8 @@ module.exports = {
                     if (req.files.enderecoSinal[0].mimetype === 'video/webm') {
                         let nomeSinal = await tirarExtensao(enderecoSinal);
                         nomeSinal = nomeSinal + ".gif"
-                        let pastaOrigem = "public/upload/videosBrutos/videosCortados/" + enderecoSinal;
-                        let destino = "public/upload/sinais/";
+                        let pastaOrigem = "src/public/upload/videosBrutos/videosCortados/" + enderecoSinal;
+                        let destino = "src/public/upload/sinais/";
                         await cut_video(enderecoSinal, tempoInicial, tempoFinal).then((resolve) => {
                             enderecoSinal = nomeSinal;
                             var newGif = new Gifier(pastaOrigem, destino, nomeSinal, {
@@ -970,8 +970,8 @@ module.exports = {
                     if (req.files.enderecoSinal[0].mimetype === 'video/webm') {
                         let nomeSinal = await tirarExtensao(enderecoSinal);
                         nomeSinal = nomeSinal + ".gif"
-                        let pastaOrigem = "public/upload/videosBrutos/videosCortados/" + enderecoSinal;
-                        let destino = "public/upload/sinais/";
+                        let pastaOrigem = "src/public/upload/videosBrutos/videosCortados/" + enderecoSinal;
+                        let destino = "src/public/upload/sinais/";
                         await cut_video(enderecoSinal, tempoInicial, tempoFinal).then((resolve) => {
                             enderecoSinal = nomeSinal;
                             var newGif = new Gifier(pastaOrigem, destino, nomeSinal, {

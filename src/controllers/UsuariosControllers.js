@@ -2,7 +2,7 @@ const Usuario = require('../models/Usuario');
 const Sinal = require('../models/Sinal');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authConfig = require('../config/auth.json');
+const authConfig = require('../config/auth');
 const yup = require('yup');
 const { Op } = require("sequelize"); 
 const fs = require('fs'); // manipular arquivos
@@ -18,7 +18,7 @@ async function deletarImgAntiga(imgAntiga, tipoImg) {
     if(imgAntiga == ''){
         return false;
     }else{
-        imgOld = './public/upload/' + tipoImg + "/" + imgAntiga;
+        imgOld = './src/public/upload/' + tipoImg + "/" + imgAntiga;
 
     fs.access(imgOld, (err) => {
         if (!err) {

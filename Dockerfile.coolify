@@ -28,8 +28,8 @@ RUN npm install --omit=dev
 # Copia restante do código
 COPY . .
 
-# Porta (ajuste se necessário)
-EXPOSE 3000
+# A aplicacao usa 8080 por padrao, mas pode ser sobrescrita por PORT no Coolify
+EXPOSE 8080
 
 # Comando de inicialização (IMPORTANTE)
 CMD ["node", "src/index.js"]

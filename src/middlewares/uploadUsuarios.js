@@ -5,7 +5,7 @@ module.exports = (multer({
         destination: (req, file, cb) => {
             console.log("entrei aqui no ");
             if (file.fieldname === "fotoPerfil") {
-                cb(null, './public/upload/fotosPerfilUsuarios');    
+                cb(null, './src/public/upload/fotosPerfilUsuarios');    
             } 
 
         },
